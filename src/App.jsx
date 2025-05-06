@@ -22,8 +22,8 @@ function App() {
       <Route path='/aboutus' element={<About />} />
       <Route path='/games' element={<TurfGamesPage />} />
       <Route path='/farms' element={<FarmSportsPage />} />
-      <ScrollToTop/>
     </Routes>
+      <ScrollToTop/>
       </div>
   );
 }
