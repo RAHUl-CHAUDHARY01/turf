@@ -8,6 +8,7 @@ import FamilyTravelSection from './components/Academy/Home';
 import About from './components/AboutUs/About';
 import TurfGamesPage from './components/Games/Games';
 import FarmSportsPage from './components/Farms/Farms';
+import ScrollToTop from './ScrollToTop';
 function App() {
   return (
     <div>
@@ -21,6 +22,7 @@ function App() {
       <Route path='/aboutus' element={<About />} />
       <Route path='/games' element={<TurfGamesPage />} />
       <Route path='/farms' element={<FarmSportsPage />} />
+      <ScrollToTop/>
     </Routes>
       </div>
   );
