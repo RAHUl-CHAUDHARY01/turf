@@ -49,7 +49,7 @@ export default function Benefits() {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col">
+    <div className=" text-white min-h-screen flex flex-col">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left - Text */}
@@ -57,10 +57,10 @@ export default function Benefits() {
             <p className="text-sm font-semibold tracking-wide uppercase text-orange-500">
               Why Choose Us
             </p>
-            <h1 className="mt-4 text-3xl md:text-5xl font-bold">
+            <h1 className="mt-4 text-3xl md:text-5xl font-bold text-black">
               Your Game Starts Here
             </h1>
-            <p className="mt-6 text-gray-300">
+            <p className="mt-6 text-black font-[500] ">
               Book high-quality turfs with real-time availability, seamless scheduling, and unbeatable service—because your match deserves the best.
             </p>
             <button className="mt-8 bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-md font-medium transition-all duration-300 flex items-center">

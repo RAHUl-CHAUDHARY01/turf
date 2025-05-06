@@ -1,2 +1,11 @@
 @import "tailwindcss";
 
+/* tailwind.css or global.css */
+.paint-border {
+    border-width: 20px;
+    border-style: solid;
+    border-image-source: url('/paint-border.png'); /* your stain-like border image */
+    border-image-slice: 30; /* adjust based on image */
+    border-image-repeat: round;
+  }
+  
