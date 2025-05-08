@@ -51,80 +51,63 @@ export default function Carousel() {
   };
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
-      {/* Slides */}
-      {slides.map((slide, index) => (
+    <div className="relative w-full h-screen bg-black overflow-hidden" style={{fontFamily:'Bungee'}}>
+    {slides.map((slide, index) => (
+      <div
+        key={slide.id}
+        className={`absolute inset-0 transition-opacity duration-1000 ${
+          index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+        }`}
+      >
+        <img
+          src={slide.image}
+          alt={slide.location}
+          className="w-full h-full object-cover brightness-75"
+        />
+  
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/90 z-10"></div>
+  
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-orange-500 drop-shadow-xl mb-4 uppercase tracking-wide">
+            {slide.location}
+          </h2>
+          <p className="text-white text-base md:text-lg max-w-xl">
+            {slide.description}
+          </p>
+        </div>
+      </div>
+    ))}
+  
+    {/* Dots */}
+    <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-30 space-y-3">
+      {slides.map((_, index) => (
         <div
-          key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
-        >
-          <div className="absolute inset-0 bg-black">
-            <img
-              src={slide.image}
-              alt={slide.location}
-              className="w-full h-full object-cover opacity-70"
-            />
-          </div>
-
-          {/* Text Content */}
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-white z-20">
-            <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center">
-              <p className="text-orange-400 text-lg md:text-xl font-light mb-4">
-                {slide.description}
-              </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12">
-                {slide.location}
-              </h2>
-            </div>
-          </div>
-        </div>
+          key={index}
+          onClick={() => setCurrentSlide(index)}
+          className={`w-3 h-3 rounded-full cursor-pointer border-2 ${
+            index === currentSlide ? 'bg-orange-500 border-orange-500 scale-110' : 'border-white'
+          } transition-all`}
+        />
       ))}
-
-      {/* Vertical slide indicator */}
-      <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-30">
-        <div className="flex flex-col items-center space-y-4">
-          {slides.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
-                index === currentSlide
-                  ? 'bg-orange-400 scale-125'
-                  : 'bg-white bg-opacity-30 hover:bg-opacity-70'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Navigation buttons */}
-      <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col space-y-4">
-        <button
-          onClick={prevSlide}
-          className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black shadow-md hover:bg-gray-200 transition"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-        <button
-          onClick={nextSlide}
-          className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black shadow-md hover:bg-gray-200 transition"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Book Now CTA */}
-      <div className="absolute left-1/2 bottom-24 transform -translate-x-1/2 z-30">
-        <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-md font-semibold text-sm tracking-wide transition">
-          Book Your Turf
-        </button>
-      </div>
     </div>
+  
+    {/* Navigation Arrows */}
+    <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col space-y-4">
+      <button onClick={prevSlide} className="p-3 bg-orange-500 hover:bg-orange-600 text-white rounded-full transition shadow-lg">
+        ↑
+      </button>
+      <button onClick={nextSlide} className="p-3 bg-orange-500 hover:bg-orange-600 text-white rounded-full transition shadow-lg">
+        ↓
+      </button>
+    </div>
+  
+    {/* CTA Button */}
+    <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-30">
+      <button className="bg-orange-500 hover:bg-white hover:text-orange-600 text-black font-bold py-3 px-8 rounded-full transition tracking-wide text-lg shadow-lg uppercase">
+        Book Your Turf
+      </button>
+    </div>
+  </div>
+  
   );
 }

@@ -5,6 +5,12 @@ import cricketbg from '../../assets/cricketvector.png';
 import pb from '../../assets/pickleballvecctor.png';
 import padel from '../../assets/padel.png';
 import badminton from '../../assets/badmintonvector.png';
+
+import vk4 from '../../assets/vk4.avif';
+import vk from '../../assets/vk.jpg';
+import football from '../../assets/football.avif';
+import padel2 from '../../assets/padel.webp';
+import pickleball from '../../assets/pickleball.avif';
 export default function TurfGamesPage() {
   const [selectedSport, setSelectedSport] = useState(null);
   
@@ -16,7 +22,8 @@ export default function TurfGamesPage() {
       image:fb,
       description: "Experience the thrill of football on our premium turf with perfectly marked fields, professional-grade goals, and floodlights for evening matches.",
       price: "₹1200/hour",
-      features: ["5-a-side", "7-a-side", "Full pitch"]
+      features: ["5-a-side", "7-a-side", "Full pitch"],
+      mainImage: football
     },
     {
       id: 2,
@@ -24,7 +31,8 @@ export default function TurfGamesPage() {
       image:cricketbg,
       description: "Play cricket on our specialized cricket turf with well-maintained pitches, practice nets, and professional equipment for an authentic experience.",
       price: "₹1500/hour",
-      features: ["Nets practice", "Full pitch", "Equipment rental"]
+      features: ["Nets practice", "Full pitch", "Equipment rental"],
+      mainImage: vk
     },
     {
       id: 3,
@@ -32,7 +40,8 @@ export default function TurfGamesPage() {
       image:pb,
       description: "Enjoy the rapidly growing sport of pickleball on our custom courts with proper markings, nets, and equipment for all skill levels.",
       price: "₹800/hour",
-      features: ["2 courts", "Equipment available", "Beginner friendly"]
+      features: ["2 courts", "Equipment available", "Beginner friendly"],
+      mainImage: pickleball
     },
     {
       id: 4,
@@ -40,7 +49,8 @@ export default function TurfGamesPage() {
       image:padel,
       description: "Try our exciting pedal go-karts on specialized tracks with various obstacles and challenges for a fun-filled adventure.",
       price: "₹600/hour",
-      features: ["Track access", "Go-kart rental", "Safety gear"]
+      features: ["Track access", "Go-kart rental", "Safety gear"],
+      mainImage: padel2
     },
     {
       id: 5,
@@ -48,7 +58,8 @@ export default function TurfGamesPage() {
       image:badminton,
       description: "Play badminton on our indoor courts with professional flooring, proper lighting, and high-quality equipment for an optimal playing experience.",
       price: "₹700/hour",
-      features: ["4 courts", "Indoor facility", "Equipment rental"]
+      features: ["4 courts", "Indoor facility", "Equipment rental"],
+      mainImage: vk4
     }
   ];
 
@@ -66,12 +77,12 @@ export default function TurfGamesPage() {
   ];
 
   return (
-    <div className="min-h-screen  text-white font-sans">
+    <div className="min-h-screen  text-white">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-black">
-        <div className="h-96 flex items-center justify-center" style={{backgroundImage: `url(${bgImage})`}}>
+        <div className="h-96 flex items-center justify-center" style={{backgroundImage: `url(${bgImage})` }}>
         </div>
-        <div className="container  px-4 z-10 text-center bg-white border-2 border-orange-500 rounded-3xl mt-[-8rem] py-8 mx-auto w-[80%]">
+        <div className="container  px-4 z-10 text-center bg-[#f9f8f3] border-2 border-orange-500 rounded-3xl mt-[-8rem] py-8 mx-auto w-[80%]" style={{fontFamily:'Bungee'}}>
             <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
               <span className="text-black">GAME</span>
               <span className="text-orange-500">ON</span>
@@ -133,7 +144,7 @@ export default function TurfGamesPage() {
                 {/* Sport Image */}
                 <div className="relative h-64 lg:h-auto">
                   <img 
-                    src={`/api/placeholder/800/600`} 
+                    src={sports[selectedSport-1].mainImage}
                     alt={sports[selectedSport-1].name}
                     className="absolute inset-0 w-full h-full object-cover"
                   />

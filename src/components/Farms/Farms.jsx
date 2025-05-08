@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import bgImage from '../../assets/vk2.webp';
 export default function FarmSportsPage() {
   const [selectedFarm, setSelectedFarm] = useState(null);
   
@@ -87,39 +87,28 @@ export default function FarmSportsPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="bg-gradient-to-r from-black via-black to-orange-900 h-96 flex items-center justify-center">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute inset-0 bg-pattern-dots"></div>
-          </div>
-          <div className="container mx-auto px-4 z-10 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              <span className="text-white">FARM</span>
-              <span className="text-orange-500">PLAY</span>
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300">
-              Experience sports in natural farm settings. Connect with nature while you play!
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
-                BOOK A FARM
-              </button>
-              <button className="bg-transparent border-2 border-white hover:border-orange-500 hover:text-orange-500 font-bold py-3 px-6 rounded-lg transition-all">
-                EXPLORE ACTIVITIES
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        {/* Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" fill="#ffffff">
-            <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-          </svg>
-        </div>
-      </div>
-      
+           {/* Hero Section */}
+           <div className="relative overflow-hidden bg-black">
+             <div className="h-96 flex items-center justify-center" style={{backgroundImage: `url(${bgImage})`}}>
+             </div>
+             <div className="container  px-4 z-10 text-center bg-white border-2 border-orange-500 rounded-3xl mt-[-8rem] py-8 mx-auto w-[80%]">
+                 <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+                   <span className="text-black">GAME</span>
+                   <span className="text-orange-500">ON</span>
+                 </h1>
+                 <p className="text-xl md:text-2xl max-w-3xl mx-auto font-light text-black">
+                   Premium sports facilities for your passion. Book your turf now!
+                 </p>
+                 <div className="mt-10 flex flex-wrap justify-center gap-6">
+                   <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg hover:shadow-orange-500/30 text-lg">
+                     BOOK NOW
+                   </button>
+                   <button className="border-orange-500  border-2 text-orange-500 hover:border-orange-500 hover:text-orange-500 font-semibold py-4 px-8 rounded-xl transition-all text-lg">
+                     EXPLORE FACILITIES
+                   </button>
+                 </div>
+               </div>
+           </div>
       {/* Farms Selection */}
       <div className="bg-white py-16">
         <div className="container mx-auto px-4">

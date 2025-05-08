@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 /* tailwind.css or global.css */
 .paint-border {
     border-width: 20px;
@@ -9,3 +8,23 @@
     border-image-repeat: round;
   }
   
+  /* src/index.css or src/App.css */
+@font-face {
+  font-family: 'Bungee';
+  src: url('./assets/fonts/BungeeLayers-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Optional: assign a Tailwind utility class */
+.my-font {
+  font-family: 'Bungee', sans-serif;
+}
+
+@layer utilities {
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px white; /* Tailwind orange-500 */
+    text-stroke: 2px black;
+  }
+}

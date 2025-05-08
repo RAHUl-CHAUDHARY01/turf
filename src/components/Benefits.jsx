@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import turfImage from '../assets/vk.jpg';
-
+import f1 from '../assets/feature1.png';
+import f2 from '../assets/feature2.png';
+import f3 from '../assets/feature3.png';
+import f4 from '../assets/feature4.png';
+import f5 from '../assets/feature5.png';
 export default function Benefits() {
   const [animationStarted, setAnimationStarted] = useState(false);
 
@@ -11,47 +15,41 @@ export default function Benefits() {
 
   const featureCards = [
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-4H5l7-7 7 7h-4v4H9z" />
-        </svg>
-      ),
-      title: "Easy Booking",
-      description: "Book your preferred turf slot in just a few clicks—no hassle, full convenience.",
+      title: "Pioneers in J&K",
+      description:
+        "Being the first in business we embody innovative thinking, risk taking and market foresight.",
+      icon: f2, // replace with your actual icons
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-        </svg>
-      ),
-      title: "Premium Turf Quality",
-      description: "Top-notch grass and lighting for an unbeatable playing experience every time.",
+      title: "Social-Centric",
+      description:
+        "Uniting sports lovers, creating Jammu’s home ground and a vibrant local culture",
+      icon: f1,
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 4h10M5 11h14M5 19h14M9 15h6" />
-        </svg>
-      ),
-      title: "24/7 Access",
-      description: "Choose your time, day or night—our turfs are ready when you are.",
+      title: "Leading by Example",
+      description:
+        "Boldly embracing risk to redefine the sporting landscape, catering to every player's desire, and proving our exceptional vision and ingenuity",
+      icon: f3,
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0v6" />
-        </svg>
-      ),
-      title: "Custom Events",
-      description: "Book entire turfs for tournaments, parties, or corporate games with ease.",
+      title: "Sports for All",
+      description:
+        "We’re driven to make sports accessible to all, inspiring you to get off your phone and onto your feet.",
+      icon: f4,
+    },
+    {
+      title: "Connect with Nature",
+      description:
+        'Indulge in a serene escape from the urban bustle of the city and dive into a natural haven in the lush green "Queen’s Orchid"',
+      icon: f5,
     },
   ];
 
   return (
-    <div className=" text-white min-h-screen flex flex-col">
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+    <div className=" text-white h-full flex flex-col" style={{fontFamily:'Bungee'}}>
+      <div className="container mx-auto ">
+        <div className=" px-4 flex flex-col md:flex-row items-center gap-12">
           {/* Left - Text */}
           <div className="w-full md:w-1/2">
             <p className="text-sm font-semibold tracking-wide uppercase text-orange-500">
@@ -91,30 +89,33 @@ export default function Benefits() {
           </div>
         </div>
 
-        {/* Features */}
-        <div className="mt-20">
-          <h2 className="text-center text-2xl md:text-3xl font-semibold mb-10 text-white">
-            What Makes Us Stand Out
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featureCards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-gray-900 p-6 rounded-xl hover:shadow-orange-500/50 shadow-md hover:scale-105 transition-all duration-300 group"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="bg-black border border-orange-500 p-4 rounded-full mb-4">
-                    {card.icon}
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-white text-center">
-                    {card.title}
-                  </h3>
-                  <p className="text-gray-400 text-center text-sm">{card.description}</p>
-                </div>
-              </div>
-            ))}
+        <div className="bg-[#f9f8f3] py-20 px-4">
+      {/* Background faint title */}
+      <div className="relative text-center mb-16">
+        <h2 className="text-[100px] font-extrabold text-gray-200 tracking-widest absolute inset-0 flex items-center justify-center select-none pointer-events-none opacity-20">
+          BENEFITS
+        </h2>
+        <h3 className="relative text-3xl md:text-4xl font-extrabold text-black z-10">
+          WHY CHOOSE US?
+        </h3>
+        <p className="mt-4 text-gray-600 max-w-xl mx-auto">
+          Because together we share a passion for sports and we strive to offer you the finest experiences.
+        </p>
+      </div>
+
+      {/* Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+        {featureCards.map((card, index) => (
+          <div key={index} className="text-center px-4">
+            <div className="mb-4 flex justify-center"><img src={card.icon} alt={card.title} className="w-12 h-12 animate-wiggle group-hover:animate-wiggle" /></div>
+            <h4 className="uppercase font-bold text-sm tracking-wider text-black mb-2">
+              {card.title}
+            </h4>
+            <p className="text-gray-600 text-sm">{card.description}</p>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
       </div>
 
       {/* Wiggle animation */}

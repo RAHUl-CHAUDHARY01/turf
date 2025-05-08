@@ -82,7 +82,7 @@ export default function HeroSection() {
         <button className="p-2 text-white">
           <Menu size={24} />
         </button>
-        <div className="text-white text-xl sm:text-2xl font-bold">TURFZONE</div>
+        <div className="text-white text-xl sm:text-2xl font-bold" style={{fontFamily:'Bungee'}}>COVILLA</div>
 
         {/* Destinations Dropdown */}
         <div className="hidden sm:block relative" ref={dropdownRef}>
@@ -99,16 +99,16 @@ export default function HeroSection() {
 
           {showDropdown && (
             <div className="absolute right-0 mt-2 bg-white rounded-2xl shadow-xl p-6 w-[420px] z-50">
-              <h4 className="uppercase text-sm tracking-widest text-gray-800 mb-4 border-b border-gray-200 pb-2">
+              <h4 className="uppercase text-sm tracking-widest text-gray-800 mb-4 border-b border-gray-200 pb-2 cur">
                 Choose a location
               </h4>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 cursor-pointer">
                 {locations.map(({ name, count }) => (
                   <div
-                    key={name}
-                    className="border border-gray-200 rounded-md p-4 hover:shadow-md cursor-pointer" onClick={()=>{navigate(locations.path)}}
+                    key={count}
+                    className="border border-gray-200 rounded-md p-4 hover:shadow-md cursor-pointer" onClick={()=>{navigate(name.path)}}
                   >
-                    <h5 className="text-lg font-semibold text-gray-800">{name}</h5>
+                    <h5 className="text-lg font-semibold text-gray-800 cursor-pointer">{name}</h5>
                     <p className="text-sm tracking-widest text-gray-500 mt-1">{count}</p>
                   </div>
                 ))}
@@ -119,12 +119,13 @@ export default function HeroSection() {
       </header>
 
       {/* Hero Content */}
-      <main className="relative z-10 flex flex-col justify-center h-4/6 px-6 sm:px-12">
+      <main className="relative z-10 flex flex-col justify-center h-4/6 px-6 sm:px-12" style={{fontFamily:'Bungee'}}>
         <div className="text-white max-w-xl">
           <h2 className="text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-4">PREMIUM SPORTS FACILITIES</h2>
-          <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6 sm:mb-8">
-            Book your next turf session now
+          <h1 className="text-4xl sm:text-6xl font-bold leading-tight text-outline">
+            Book 
           </h1>
+          <h1  className="text-4xl sm:text-6xl font-bold leading-tight mb-6 sm:mb-8 ">your next turf session now</h1>
           <button
             className="bg-white text-gray-800 px-6 py-3 text-sm font-semibold tracking-wide"
             onClick={() => navigate('/contact')}

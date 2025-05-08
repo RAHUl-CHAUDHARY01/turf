@@ -12,9 +12,9 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="text-white" style={{ fontFamily: 'Spectral' }}>
+    <footer className="text-white" style={{ fontFamily: 'Bungee' }}>
       {/* Location Section */}
-      <section className="py-16 bg-[#1a1a1a] relative overflow-hidden">
+      <section className="py-16 bg-black relative overflow-hidden">
         {/* Light orange SVG pattern */}
         <div
           className="absolute inset-0 opacity-10"
